@@ -6,10 +6,12 @@ const studentSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minlength: 3
+    minlength: 10,
+    lowercase: true
   },
   email: {
     type: String,
+    lowercase: true,
     required: true,
     unique: [true, "Email Already Reister Try With Another Email"],
     validator(value) {
@@ -28,6 +30,7 @@ const studentSchema = new mongoose.Schema({
   address: {
     type: String,
     required: true,
+    lowercase: true
   }
 
 })
